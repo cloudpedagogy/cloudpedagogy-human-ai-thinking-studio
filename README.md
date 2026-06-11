@@ -4,6 +4,14 @@ A local-first, browser-based tool to help users think more effectively with AI t
 
 This application is fully static, running entirely in the browser using React, Zustand, and Tailwind CSS. All data (including user sessions, custom patterns, and settings) is stored securely in your browser's LocalStorage.
 
+🌐 Live Hosted Version
+
+http://cloudpedagogy-human-ai-thinking-studio.s3-website.eu-west-2.amazonaws.com/
+
+🖼️ Screenshot
+
+![Screenshot](assets/screenshot.png)
+
 ## Getting Started
 
 1. Install dependencies:
