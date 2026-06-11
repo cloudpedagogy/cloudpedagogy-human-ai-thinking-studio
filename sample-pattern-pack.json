@@ -1,0 +1,94 @@
+{
+  "pack_name": "CloudPedagogy Sample Pack",
+  "version": "1.1",
+  "patterns": [
+    {
+      "id": "scenario-planning",
+      "name": "Scenario Planning Walkthrough",
+      "category": "Strategic Foresight",
+      "purpose": "To stress-test current strategies against multiple plausible futures.",
+      "tags": [
+        "strategy",
+        "foresight",
+        "risk"
+      ],
+      "when_to_use": [
+        "Developing a 5-year strategic plan",
+        "Evaluating a high-risk long-term investment"
+      ],
+      "thinking_questions": [
+        "What are the two most critical uncertainties driving the future of this space?",
+        "If we plot those uncertainties on an X/Y axis, what are the four resulting scenarios?",
+        "Does our current strategy survive in all four quadrants?"
+      ],
+      "stakeholder_questions": [
+        "Which stakeholders gain the most power in our worst-case scenario?",
+        "Are we relying on the cooperation of stakeholders whose incentives will change in the future?"
+      ],
+      "second_order_questions": [
+        "If our most optimistic scenario comes true, what new operational bottlenecks will we hit immediately?"
+      ],
+      "ai_prompts": [
+        "Based on these uncertainties: [A] and [B], generate a highly detailed narrative for the worst-case scenario quadrant.",
+        "Act as a hostile competitor operating in the future scenario where [Trend] accelerates. What is your strategy?"
+      ],
+      "reflection_questions": [
+        "Are we actively preparing for the future, or just planning for the present to continue indefinitely?"
+      ],
+      "confidence_questions": [
+        "How confident are you in your conclusion?",
+        "What evidence would increase your confidence?",
+        "What evidence could change your mind?"
+      ],
+      "metadata": {
+        "author": "CloudPedagogy",
+        "version": "1.0",
+        "source": "Sample Thinking Pack"
+      }
+    },
+    {
+      "id": "literature-gap-analysis",
+      "name": "Literature Gap Analysis",
+      "category": "Research Thinking",
+      "purpose": "To systematically identify what is known, what is contested, and what is missing in a body of evidence.",
+      "tags": [
+        "research",
+        "evidence",
+        "critical-thinking"
+      ],
+      "when_to_use": [
+        "Beginning a new research project",
+        "Evaluating the novelty of a proposed solution"
+      ],
+      "thinking_questions": [
+        "What is the consensus view in this field?",
+        "What are the major points of contention among credible experts?",
+        "What assumptions is everyone in the field making without questioning?"
+      ],
+      "stakeholder_questions": [
+        "Who is funding the majority of the existing research?",
+        "Whose lived experiences are entirely absent from the literature?"
+      ],
+      "second_order_questions": [
+        "If we fill this research gap, what adjacent fields will be forced to update their models?"
+      ],
+      "ai_prompts": [
+        "Summarize the major points of contention between [Theory A] and [Theory B].",
+        "Review these research abstracts and identify common methodological limitations across all of them: [Abstracts]."
+      ],
+      "reflection_questions": [
+        "Are you looking for a gap in the research, or just looking for evidence to support the gap you already want to fill?"
+      ],
+      "confidence_questions": [
+        "How confident are you in your conclusion?",
+        "What evidence would increase your confidence?",
+        "What evidence could change your mind?"
+      ],
+      "metadata": {
+        "author": "CloudPedagogy",
+        "version": "1.0",
+        "source": "Sample Thinking Pack"
+      }
+    }
+  ]
+}
