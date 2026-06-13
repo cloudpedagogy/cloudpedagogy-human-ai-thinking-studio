@@ -55,3 +55,10 @@ When you import a pattern pack, any new categories specified in the JSON file wi
 ## Exporting Packs
 
 You can also export your current library of custom patterns by clicking **"Export Pack"** in the Pattern Registry. This generates a JSON file that you can share with others.
+
+## Licence
+
+This project is released under the MIT Licence.
+
+Part of the CloudPedagogy Governance Engineering ecosystem.
+
