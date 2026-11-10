@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { ArrowRight, BrainCircuit, CheckCircle2 } from 'lucide-react';
+import { rankWizardPatterns } from '../utils/wizardUtils';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -32,48 +33,7 @@ export const Wizard: React.FC = () => {
   ];
 
   const getRecommendations = () => {
-    // Scoring system based on the selections to rank patterns
-    const scoredPatterns = patterns.map(p => {
-      let score = 0;
-      const t = [p.name, p.purpose, p.category, ...(p.when_to_use || [])].join(' ').toLowerCase();
-
-      // Goal matching
-      if (goal === 'Make a decision' && t.includes('decision')) score += 3;
-      if (goal === 'Assess a risk' && t.includes('risk')) score += 3;
-      if (goal === 'Evaluate evidence' && t.includes('evidence')) score += 3;
-      if (goal === 'Challenge assumptions' && t.includes('assumption')) score += 3;
-      if (goal === 'Reflect on an outcome' && t.includes('reflection')) score += 3;
-      if (goal === 'Design a course' && t.includes('curriculum')) score += 3;
-      if (goal === 'Design a workflow' && t.includes('system')) score += 3;
-      if (goal === 'Plan a project' && t.includes('plan')) score += 2;
-      if (goal === 'Review an AI output' && t.includes('critical')) score += 2;
-
-      // Situation matching
-      if (situation === 'Educational' && t.includes('curriculum')) score += 2;
-      if (situation === 'Governance' && t.includes('governance')) score += 2;
-      if (situation === 'Strategic' && t.includes('strategy')) score += 2;
-      if (situation === 'Research' && t.includes('research')) score += 2;
-
-      // Help matching
-      if (help === 'Identify risks' && t.includes('risk')) score += 3;
-      if (help === 'Consider stakeholders' && t.includes('stakeholder')) score += 3;
-      if (help === 'Compare options' && t.includes('trade-off')) score += 3;
-      if (help === 'Challenge assumptions' && t.includes('assumption')) score += 3;
-      if (help === 'Reflect on outcomes' && t.includes('reflection')) score += 3;
-      if (help === 'Evaluate evidence' && t.includes('evidence')) score += 3;
-
-      // Random tiebreaker to avoid same exact list
-      score += Math.random() * 0.5;
-
-      return { pattern: p, score };
-    });
-
-    scoredPatterns.sort((a, b) => b.score - a.score);
-    
-    return {
-      bestMatch: scoredPatterns[0]?.pattern,
-      suggestions: scoredPatterns.slice(1, 4).map(s => s.pattern)
-    };
+    return rankWizardPatterns(patterns, goal, situation, help);
   };
 
   const startSession = (patternId: string) => {
@@ -201,7 +161,7 @@ export const Wizard: React.FC = () => {
                               <p className="text-slate-700 dark:text-slate-300 text-lg">{recs.bestMatch.purpose}</p>
                             </div>
                             <button 
-                              onClick={() => startSession(recs.bestMatch.id)}
+                              onClick={() => recs.bestMatch && startSession(recs.bestMatch.id)}
                               className="shrink-0 flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold transition-colors shadow-md w-full sm:w-auto justify-center"
                             >
                               Use Pattern <ArrowRight size={20} />

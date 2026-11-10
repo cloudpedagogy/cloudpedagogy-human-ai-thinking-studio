@@ -41,6 +41,7 @@ export interface PatternPack {
 export interface UserSession {
   id: string;
   patternId: string;
+  pattern_snapshot?: ThinkingPattern;
   timestamp: number;
   decision_context: {
     problem: string;
@@ -59,4 +60,18 @@ export interface UserSession {
   
   // New Confidence Assessment format
   confidence_responses?: Record<string, string>;
+}
+
+export interface StudioBackupData {
+  patterns: ThinkingPattern[];
+  packs: PatternPack[];
+  sessions: UserSession[];
+  activeSessionId: string | null;
+}
+
+export interface StudioBackup {
+  format: 'cloudpedagogy-thinking-studio-backup';
+  version: 1;
+  exportedAt: string;
+  data: StudioBackupData;
 }

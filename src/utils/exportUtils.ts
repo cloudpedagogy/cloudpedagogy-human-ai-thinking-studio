@@ -54,8 +54,6 @@ export const generateMarkdown = (pattern: ThinkingPattern, session: UserSession)
     md += `**What evidence would increase confidence?**\n${session.confidence_justification || '*No response provided.*'}\n\n`;
   }
 
-
-
   return md;
 };
 
@@ -69,6 +67,10 @@ export const downloadTextFile = (content: string, filename: string) => {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
 };
 
 export const downloadJsonPack = (pack: PatternPack, filename: string) => {
@@ -82,4 +84,8 @@ export const downloadJsonPack = (pack: PatternPack, filename: string) => {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
 };

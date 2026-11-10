@@ -1,0 +1,126 @@
+{
+  "state": {
+    "patterns": [
+      {
+        "id": "trade-off-analysis",
+        "name": "Trade-off Analysis",
+        "category": "Decision Making",
+        "purpose": "Systematically evaluate what must be given up to gain something else in a decision.",
+        "when_to_use": [
+          "Choosing between mutually exclusive options",
+          "Resource allocation decisions",
+          "Evaluating competing priorities"
+        ],
+        "thinking_questions": [
+          "What are the primary benefits of Option A vs Option B?",
+          "What specifically are we giving up by choosing this option?",
+          "Are we overvaluing the immediate benefits and undervaluing the long-term costs?"
+        ],
+        "stakeholder_questions": [
+          "Who bears the cost of this trade-off?",
+          "Who benefits disproportionately?"
+        ],
+        "second_order_questions": [
+          "If we accept this trade-off, what precedent does it set for future decisions?"
+        ],
+        "ai_prompts": [
+          "Help me construct a trade-off matrix for [Decision]."
+        ],
+        "reflection_questions": [
+          "Which trade-off was the hardest to accept?"
+        ]
+      },
+      {
+        "id": "custom-user-pattern-1",
+        "name": "Custom Governance Audit",
+        "category": "Governance Thinking",
+        "purpose": "User created custom pattern for auditing AI oversight.",
+        "when_to_use": [
+          "Quarterly AI reviews"
+        ],
+        "thinking_questions": [
+          "Who approved this algorithm?"
+        ],
+        "stakeholder_questions": [],
+        "second_order_questions": [],
+        "ai_prompts": [
+          "Critique this governance process."
+        ],
+        "reflection_questions": [
+          "Is human oversight real or symbolic?"
+        ],
+        "tags": ["custom", "governance"],
+        "metadata": {
+          "author": "Analyst Jane",
+          "version": "1.0",
+          "source": "Internal Policy"
+        }
+      }
+    ],
+    "packs": [
+      {
+        "pack_name": "CloudPedagogy Core Pack",
+        "version": "1.2",
+        "patterns": []
+      },
+      {
+        "pack_name": "Custom Enterprise Pack",
+        "version": "1.0",
+        "patterns": []
+      }
+    ],
+    "sessions": [
+      {
+        "id": "session-legacy-1",
+        "patternId": "trade-off-analysis",
+        "timestamp": 1718136000000,
+        "decision_context": {
+          "problem": "Select cloud provider",
+          "options": "AWS vs On-Prem",
+          "why_matters": "Data sovereignty and cost"
+        },
+        "notes": "Preliminary review completed.",
+        "responses": {
+          "q_0": "Option A offers scalability, Option B offers data residency."
+        },
+        "stakeholder_responses": {
+          "sq_0": "Engineering team bears migration cost."
+        },
+        "second_order_responses": {
+          "so_0": "Sets precedent for external cloud usage."
+        },
+        "reflections": {
+          "r_0": "Accepting initial setup complexity was necessary."
+        },
+        "confidence_level": "High",
+        "confidence_justification": "Evidence from benchmark tests",
+        "confidence_responses": {}
+      },
+      {
+        "id": "session-legacy-custom",
+        "patternId": "custom-user-pattern-1",
+        "timestamp": 1718139600000,
+        "decision_context": {
+          "problem": "Approve automated grading model",
+          "options": "Full auto vs human-in-loop",
+          "why_matters": "Student fairness"
+        },
+        "notes": "Compliance checks pending.",
+        "responses": {
+          "q_0": "Academic Senate approved the pilot."
+        },
+        "stakeholder_responses": {},
+        "second_order_responses": {},
+        "reflections": {
+          "r_0": "Human oversight must remain mandatory."
+        },
+        "confidence_level": "Medium",
+        "confidence_justification": "Pilot data is limited to 2 classes",
+        "confidence_responses": {}
+      }
+    ],
+    "activeSessionId": "session-legacy-1"
+  },
+  "version": 0
+}
+
